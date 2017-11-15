@@ -1,0 +1,12 @@
+<div class="col-sm-11 col-xs-12 blog-content">
+  <h2><%= @article.name %></h2>
+  <p><%= @article.created_at.strftime('%b %d, %Y') %></p>
+  <h4>Titles:</h4>
+    <p><%= simple_format(@article.title) %></p>
+  <h4>Body:</h4>
+    <p><%= simple_format(@article.body) %></p>
+  <h4>Keywords:</h4>
+    <p><%= simple_format(@article.keywords) %></p>
+  <p><%= link_to "GENERATE", gen_article_path(@article), class: "some-class" %></p>
+  <p><%= link_to "See all articles", articles_path %></p>
+</div>

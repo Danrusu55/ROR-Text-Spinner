@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="col-sm-10 col-sm-offset-1 col-xs-12 blog-content">
+    <h1> All articles: </h1>
+    <% @articles.each do |article| %>
+      <div class="col-xs-12">
+          <h2><%= article.name %></h2>
+          <p><%= link_to "READ MORE", article_path(article) %></p>
+          <p><%= link_to "GENERATE", gen_article_path(article), class: "some-class" %></p>
+        <br>
+      </div>
+    <% end %>
+  </div>
+</div>

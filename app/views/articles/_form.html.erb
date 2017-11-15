@@ -1,0 +1,11 @@
+<div class="row">
+  <%= simple_form_for @article, html: { class: 'form-horizontal' } do |f| %>
+    <div class="form-group">
+      <%= f.input :name, label: 'Enter name for the article:', error: 'Name is required, please specify one', input_html: { class: 'form-control' } %>
+      <%= f.input :title, label: 'Enter title:', error: 'Title is required, please specify one', wrapper_html: { class: 'form-control' } %>
+      <%= f.input :body,  label: 'Enter body:', error: 'Body is required, please specify one', wrapper_html: { class: 'form-control' } %>
+      <%= f.input :keywords,  label: 'Enter keywords:', error: 'Keywords is required, please specify one', wrapper_html: { class: 'form-control' } %>
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+</div>
