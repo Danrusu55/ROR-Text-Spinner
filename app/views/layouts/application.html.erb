@@ -17,11 +17,11 @@
         <ul class="nav navbar-nav">
             <% if current_user %>
              <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+             <% if current_user.admin %>
+               <%= link_to 'Admin', rails_admin_path %>
+             <% end %>
             <% else %>
              <%= link_to 'Login', new_user_session_path %>
-            <% end %>
-            <% if current_user.admin %>
-              <%= link_to 'Admin', rails_admin_path %>
             <% end %>
             <%= link_to 'All articles', articles_path %>
         </ul>
