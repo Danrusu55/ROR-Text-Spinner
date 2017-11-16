@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   before_action :find_article, only: [:edit, :update, :show, :destroy, :gen]
 
   def index
-    @articles = Article.all
+    @articles = current_user.articles.all
   end
   # Creates article
   def new
@@ -58,7 +58,7 @@ class ArticlesController < ApplicationController
     bodiesList = @article.body.split('||')
     keywordsList = @article.keywords.split('||')
     @articleList = []
-    50.times do
+    1.times do
       finalArticle = {'title' => titlesList.sample, 'body' => bodiesList.sample, 'keywords' => keywordsList.sample(15).join(', ')}
       @articleList.push(finalArticle)
     end
