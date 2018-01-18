@@ -3,21 +3,31 @@
     <h1> Generated Article: </h1>
     <div class="col-xs-12">
       <% @articleList.each_with_index do |article,index| %>
+        <h3>Article <%= index+1 %>:</h3>
         <p><%= simple_format(article['title']) %></p>
         <textarea class="js-copytextarea" cols='100'><%= article['title'].gsub("<br>"," ") %></textarea>
         <button class="js-textareacopybtn" style="vertical-align:top;">Copy Title</button>
         <br><br>
 
-        <p><%= simple_format(article['body']) %></p>
-        <textarea class="js-copybodyarea" cols='100'><br><br><%= article['body'] %></textarea>
-        <button class="js-bodycopybtn" style="vertical-align:top;">Copy Body</button>
+        <p><%= simple_format(article['body1']) %></p>
+        <textarea class="js-copybodyarea" cols='100'><br><br><%= article['body1'] %></textarea>
+        <button class="js-bodycopybtn" style="vertical-align:top;">Copy Sentence 1</button>
+        <br><br>
+        <p><%= simple_format(article['body2']) %></p>
+        <textarea class="js-copybodyarea" cols='100'><br><br><%= article['body2'] %></textarea>
+        <button class="js-bodycopybtn" style="vertical-align:top;">Copy Sentence 2</button>
+        <br><br>
+        <p><%= simple_format(article['body3']) %></p>
+        <textarea class="js-copybodyarea" cols='100'><br><br><%= article['body3'] %></textarea>
+        <button class="js-bodycopybtn" style="vertical-align:top;">Copy Sentence 3</button>
         <br><br>
 
         <p><%= article['keywords'] %></p>
-        <textarea class="js-copykeywordsarea" cols='100'><br><br><%= article['body'] %></textarea>
-        <button class="js-keywordscopybtn" style="vertical-align:top;">Copy Body</button>
+        <textarea class="js-copykeywordsarea" cols='100'><br><br><%= article['keywords'] %></textarea>
+        <button class="js-keywordscopybtn" style="vertical-align:top;">Copy Keywords</button>
         <br><br>
-
+        <hr>
+        <div style="height:50px;"></div>
       <% end %>
       <br>
       <p><%= link_to "GENERATE AGAIN", gen_article_path(@article), class: "some-class" %></p>

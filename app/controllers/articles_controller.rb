@@ -58,8 +58,8 @@ class ArticlesController < ApplicationController
     bodiesList = @article.body.split('||')
     keywordsList = @article.keywords.split('||')
     @articleList = []
-    1.times do
-      finalArticle = {'title' => titlesList.sample, 'body' => bodiesList.sample, 'keywords' => keywordsList.sample(15).join(', ')}
+    20.times do
+      finalArticle = {'title' => titlesList.sample, 'body1' => bodiesList.sample, 'body2' => bodiesList.sample, 'body3' => bodiesList.sample, 'keywords' => keywordsList.sample(20).join(', ')}
       @articleList.push(finalArticle)
     end
   end
